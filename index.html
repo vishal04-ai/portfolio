@@ -1,0 +1,617 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vishal Singh | Portfolio</title>
+
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1020;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 16, 32, 0.95);
+            border-bottom: 1px solid #1f2937;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            padding: 50px 20px;
+
+            background:
+                radial-gradient(circle at top right,
+                    rgba(56, 189, 248, 0.18),
+                    transparent 35%),
+                radial-gradient(circle at bottom left,
+                    rgba(99, 102, 241, 0.18),
+                    transparent 35%),
+                #0b1020;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 75px);
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 26px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            font-size: 18px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .buttons {
+            margin-top: 30px;
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #07111f;
+        }
+
+        .btn-primary:hover {
+            background: #7dd3fc;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .btn-outline:hover {
+            background: #38bdf8;
+            color: #07111f;
+            transform: translateY(-3px);
+        }
+
+        
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+        }
+
+        
+        #about {
+            background: #111827;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: #cbd5e1;
+        }
+
+                .skills {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: #38bdf8;
+        }
+
+        .skill-card .icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card h3 {
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: #94a3b8;
+        }
+
+        
+        #projects {
+            background: #111827;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #0b1020;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: #38bdf8;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .project-card a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+                .contact-box {
+            max-width: 700px;
+            margin: auto;
+
+            background: #111827;
+            border: 1px solid #1f2937;
+
+            padding: 40px;
+            border-radius: 15px;
+
+            text-align: center;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .contact-item span {
+            color: #94a3b8;
+        }
+
+        .contact-item a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+
+            background: #070b15;
+            color: #64748b;
+
+            border-top: 1px solid #1f2937;
+        }
+
+        footer strong {
+            color: #38bdf8;
+        }
+
+        
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h2 {
+                font-size: 21px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .contact-box {
+                padding: 25px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    
+
+    <header>
+        <nav>
+            <div class="logo">Vishal Singh</div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+   
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Hello, I'm <span>Vishal Singh</span></h1>
+
+            <h2>Web Developer & Technology Enthusiast</h2>
+
+            <p>
+                Welcome to my personal portfolio. I am passionate about
+                technology, web development, programming, and creating
+                modern digital experiences.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects"
+                   class="btn btn-primary">
+                    View My Work
+                </a>
+
+                <a href="#contact"
+                   class="btn btn-outline">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+   
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>A little bit about myself</p>
+            </div>
+
+            <div class="about-content">
+
+                <p>
+                    Hi, I'm <strong>Vishal Singh</strong>.
+                    I enjoy learning new technologies and developing
+                    creative and useful websites. I am interested in
+                    programming, web development, and continuously
+                    improving my technical skills.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+  
+
+    <section id="skills">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>My Skills</h2>
+                <p>Technologies and areas I'm learning</p>
+            </div>
+
+            <div class="skills">
+
+                <div class="skill-card">
+                    <div class="icon">🌐</div>
+                    <h3>HTML</h3>
+                    <p>Building structured web pages.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="icon">🎨</div>
+                    <h3>CSS</h3>
+                    <p>Creating responsive and modern designs.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="icon">⚡</div>
+                    <h3>JavaScript</h3>
+                    <p>Adding interaction to websites.</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>Developing user-friendly websites.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+   
+
+    <section id="projects">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>My Projects</h2>
+                <p>Things I have built or plan to build</p>
+            </div>
+
+            <div class="projects">
+
+                <div class="project-card">
+
+                    <h3>Personal Portfolio</h3>
+
+                    <p>
+                        A responsive personal portfolio website built
+                        using HTML and CSS to showcase my skills,
+                        projects, and contact information.
+                    </p>
+
+                    <a href="#home">
+                        View Project →
+                    </a>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>Web Application</h3>
+
+                    <p>
+                        A modern web application project focused on
+                        creating a simple and user-friendly experience.
+                    </p>
+
+                    <a href="#">
+                        Coming Soon →
+                    </a>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>Future Project</h3>
+
+                    <p>
+                        More exciting projects will be added here as
+                        I continue learning and developing new skills.
+                    </p>
+
+                    <a href="#contact">
+                        Stay Connected →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+   
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Contact Me</h2>
+
+                <p>
+                    Feel free to get in touch with me
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <div class="contact-item">
+
+                    📧 <span>Email:</span>
+
+                    <a href="mailto:vs1774153@gmail.com">
+                        vs1774153@gmail.com
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    📱 <span>Phone:</span>
+
+                    <a href="tel:7303662208">
+                        +91 7303662208
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    💻 <span>GitHub:</span>
+
+                    <a href="https://github.com/vishal04-ai"
+                       target="_blank">
+                        vishal04-ai
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+
+        <p>
+            © 2026 <strong>Vishal Singh</strong>.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
